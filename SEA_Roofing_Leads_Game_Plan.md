@@ -210,6 +210,40 @@ Touch 1 (call/DM) → +48h: SMS/DM bump → +48h: Loom or value drop (their mark
 
 ---
 
+## Part 9 — Website Audit: sanikaelevationagency.com (added July 17)
+
+*Note: the site blocks automated fetchers (403), so this audit is based on what Google's index captured of the live copy. Verify details against the actual page.*
+
+**What the site says today:**
+- Hero: "Organic content & paid ads for high ticket home businesses"
+- Model: done end-to-end, by hand, **one high-ticket home business per market** (good — exclusivity)
+- Proof: "built by a closer who did $1M in a single 30 day stretch"
+- Pricing: "Engagements start at $5K a month"
+- Niches: roofing, solar, HVAC, remodeling, real estate
+- NJ-based; Instagram @sanikaelevation
+
+### The 6 problems
+
+1. **The headline sells inputs, not outcomes.** "Organic content & paid ads" describes what you do. Buyers pay for what they get. Every winning competitor leads with the outcome (appointments/jobs booked).
+   - Rewrite: *"We book storm-inspection appointments on your roofing company's calendar. One contractor per market. On the pilot, you pay per appointment — not a retainer."*
+
+2. **"$5K/month" on the public page kills your exact target segment.** A $100k–$500k/yr contractor grosses ~$8k–$40k/month — a public $5K/mo floor disqualifies them before they ever book a call, and it's the #1 reason outreach will "mysteriously" go quiet (they checked the site). Agencies that publicly charge $5K+ (Hook) back it with 175+ reviews and named case studies. Fix with a **two-tier offer architecture**:
+   - **Front door (public):** the Storm-Season Pilot — pay-per-appointment, ~$1–1.5K setup (Part 3)
+   - **Back end (after pilot results):** the full $5K/mo organic + paid engine — keep the premium positioning, sell it to clients you've already made money for
+
+3. **No client proof visible.** The $1M-in-30-days claim is founder sales proof — it says *you* can close, not that *their* phone will ring. Until pilot case studies exist, borrow proof: industry math (5-minute response = up to 9x conversions; 81% of roofers have no review system), a risk-shifting guarantee, and reframe the founder story: *"I closed $1M in 30 days — this is the system that kept my calendar full."*
+
+4. **Five niches = no niche.** Roofing + solar + HVAC + remodeling + real estate reads generalist. Keep the umbrella homepage if you want, but build a dedicated **/roofing** landing page (storm-season copy, roofing numbers, pilot offer, calendar embed) — and point ALL sprint outreach there, never the homepage. Clone for other niches later.
+
+5. **Conversion path must be frictionless and instant.** Every prospect you call/DM will visit the site before booking. The /roofing page needs: calendar embed above the fold, a 4-field form (name, phone, company, market), a visible phone number, and an **instant SMS auto-reply** on any form fill — you sell speed-to-lead; your own site must demonstrate it.
+
+6. **Bot protection is aggressive (403 to non-browser agents).** Google indexes the site fine, but heavy WAF rules can also block the AI assistants and link-preview bots that buyers increasingly use to check vendors. Low priority — verify Search Console coverage and consider relaxing rules for known crawlers.
+
+### Why this matters for the sprint
+The outbound sprint (Part 6) drives every prospect to this site. Fixing #1, #2, #4, #5 is **Day 1–2 work** and multiplies everything downstream. Outbound volume with a leaking funnel is how ads "don't get results."
+
+---
+
 ## Sources
 - [Hook Agency — Best Roofing Marketing Agencies](https://hookagency.com/blog/roofing-contractor-marketing-agencies/) · [Hook Agency — Roofing Marketing Services](https://hookagency.com/roofing-marketing/)
 - [Thrive Agency — Best Roofing Marketing Companies 2026](https://thriveagency.com/news/best-roofing-marketing-companies/) · [OnTheMap — 15 Roofing Marketing Ideas 2026](https://www.onthemap.com/blog/roofing-marketing-ideas/)
@@ -221,3 +255,4 @@ Touch 1 (call/DM) → +48h: SMS/DM bump → +48h: Loom or value drop (their mark
 - [JobNimbus — Facebook Marketing for Roofing](https://www.jobnimbus.com/blog/top-facebook-ads-for-roofers-boost-your-business-with-these-proven-strategies) · [JobNimbus — Why Roofing Businesses Fail](https://www.jobnimbus.com/blog/why-roofing-businesses-fail) · [JobNimbus — 7 Best Roofing Facebook Groups](https://www.jobnimbus.com/blog/the-7-best-roofing-groups-to-join-on-facebook)
 - [GAF Certified Contractor Directory](https://www.gaf.com/en-us/roofing-contractors) · [Shovels — Building Permit Database](https://www.shovels.ai/permit-database) · [ATTOM — Nationwide Permit Data](https://www.attomdata.com/data/property-data/nationwide-building-permit-data/)
 - Storm activity July 2026: [Dom Roofing — Duluth GA July 4 Hail](https://www.domroofing.com/roof-academy/duluth-hail-storm-july-4-2026/) · [Dom Roofing — Acworth GA July 3 Hail](https://www.domroofing.com/roof-academy/acworth-hail-storm-july-3-2026/) · [Veritas Roofing — TX Hail Season 2026](https://www.veritasroofingtx.com/texas-hail-season-2026-roof-storm-damage/) · [Owl Roofing — Waite Park MN July 4 Storm](https://owlroofing.com/blog/best-roofing-companies-waite-park-mn/)
+- SEA web presence: [sanikaelevationagency.com](https://www.sanikaelevationagency.com/) (audited via search index — site blocks bots) · [Instagram @sanikaelevation](https://www.instagram.com/sanikaelevation/)
