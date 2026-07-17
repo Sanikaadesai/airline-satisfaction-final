@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:'Outfit'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/Outfit-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'Outfit'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/Outfit-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'WorkSans'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'WorkSans'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/WorkSans-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'InstrumentSerifIt'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf'); }
+  @font-face { font-family:'GeistMono'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/GeistMono-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'GeistMono'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/GeistMono-Bold.ttf'); font-weight:700; }
+
+  @page { size: letter; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  html,body { width:1080px; }
+  body { font-family:'WorkSans'; color:#161511; background:#F3F0E9; }
+
+  .page { width:1080px; height:1350px; background:#F3F0E9; position:relative; overflow:hidden; }
+  .pad { padding-left:64px; padding-right:64px; }
+  .page > * { flex-shrink:0; }
+
+  /* ---- top bar ---- */
+  .topbar { display:flex; align-items:baseline; justify-content:space-between; padding-top:34px; padding-bottom:18px; }
+  .wordmark { font-family:'Outfit'; font-weight:700; font-size:30px; letter-spacing:-0.01em; }
+  .wordmark .dot { color:#DE5426; }
+  .topbar .right { font-family:'GeistMono'; font-size:11px; letter-spacing:0.18em; color:#55524a; }
+  .rule { border-top:1.5px solid #161511; }
+  .hairline { border-top:1px solid rgba(22,21,17,0.22); }
+
+  /* ---- hero ---- */
+  .hero { text-align:center; padding-top:34px; padding-bottom:24px; }
+  .kicker { font-family:'GeistMono'; font-size:11px; letter-spacing:0.22em; color:#55524a; }
+  .kicker .d { color:#DE5426; }
+  .headline { font-family:'Outfit'; font-weight:700; font-size:76px; line-height:1.02; letter-spacing:-0.025em; margin-top:18px; }
+  .headline .serif { font-family:'InstrumentSerifIt'; font-weight:400; font-size:1.1em; color:#DE5426; letter-spacing:0; }
+  .sub { font-size:17.5px; line-height:1.55; color:#43413a; max-width:760px; margin:18px auto 0; }
+
+  /* ---- receipts ---- */
+  .sectlabel { display:flex; align-items:center; gap:12px; font-family:'GeistMono'; font-size:11px; letter-spacing:0.2em; color:#55524a; }
+  .sectlabel::before { content:''; width:22px; border-top:1.5px solid #DE5426; display:block; }
+  .receipts { padding-top:20px; padding-bottom:22px; }
+  .statrow { display:flex; margin-top:18px; }
+  .stat { flex:1; padding:8px 28px 0 0; }
+  .stat + .stat { border-left:1px solid rgba(22,21,17,0.22); padding-left:28px; }
+  .stat .num { font-family:'Outfit'; font-weight:700; font-size:68px; line-height:1; letter-spacing:-0.02em; }
+  .stat .num .o { color:#DE5426; }
+  .stat .cap { font-size:13.5px; line-height:1.45; color:#43413a; margin-top:12px; max-width:280px; }
+  .stat .cap b { font-weight:700; color:#161511; }
+
+  /* ---- ticker ---- */
+  .ticker { background:#141311; color:#F3F0E9; font-family:'GeistMono'; font-size:12px; letter-spacing:0.16em; padding:16px 0; text-align:center; white-space:nowrap; }
+  .ticker .d { color:#DE5426; padding:0 16px; }
+
+  /* ---- engines ---- */
+  .engines { padding-top:22px; padding-bottom:20px; }
+  .engrow { display:flex; gap:44px; margin-top:16px; }
+  .eng { flex:1; }
+  .eng .no { font-family:'GeistMono'; font-weight:700; font-size:13px; color:#DE5426; letter-spacing:0.12em; }
+  .eng h3 { font-family:'Outfit'; font-weight:700; font-size:27px; letter-spacing:-0.015em; margin-top:7px; }
+  .eng p { font-size:14px; line-height:1.5; color:#43413a; margin-top:9px; }
+  .eng .tag { font-family:'GeistMono'; font-size:10px; letter-spacing:0.2em; color:#8a8578; margin-top:10px; }
+
+  /* ---- quote ---- */
+  .quote { background:#EBE7DC; padding-top:20px; padding-bottom:20px; }
+  .stars { color:#DE5426; font-size:14px; letter-spacing:4px; }
+  .quote .q { font-family:'InstrumentSerifIt'; font-size:23px; line-height:1.38; margin-top:10px; max-width:920px; }
+  .quote .att { font-family:'GeistMono'; font-size:11px; letter-spacing:0.18em; color:#55524a; margin-top:11px; }
+
+  /* ---- steps ---- */
+  .steps { padding-top:15px; padding-bottom:15px; }
+  .steprow { display:flex; gap:30px; margin-top:11px; }
+  .step { flex:1; }
+  .step .no { font-family:'GeistMono'; font-weight:700; font-size:10px; color:#DE5426; letter-spacing:0.12em; }
+  .step h4 { font-family:'Outfit'; font-weight:700; font-size:13.5px; letter-spacing:-0.01em; margin-top:5px; }
+  .step p { font-size:10.2px; line-height:1.5; color:#43413a; margin-top:5px; }
+
+  /* ---- cta ---- */
+  .cta { background:#141311; color:#F3F0E9; position:absolute; bottom:0; left:0; right:0; padding-top:24px; padding-bottom:24px; display:flex; align-items:center; justify-content:space-between; }
+  .cta .big { font-family:'Outfit'; font-weight:700; font-size:40px; letter-spacing:-0.02em; line-height:1.08; }
+  .cta .serif { font-family:'InstrumentSerifIt'; font-size:23px; color:#DE5426; margin-top:10px; }
+  .cta .foot { font-family:'GeistMono'; font-size:10px; letter-spacing:0.2em; color:#8a8578; margin-top:12px; }
+  .btn { background:#DE5426; color:#141311; font-family:'Outfit'; font-weight:700; font-size:19px; letter-spacing:-0.01em; padding:19px 30px; display:inline-block; }
+  .ctaright { text-align:right; }
+  .ctaright .site { font-family:'GeistMono'; font-size:12px; letter-spacing:0.14em; color:#F3F0E9; margin-top:14px; }
+  .ctaright .ig { font-family:'GeistMono'; font-size:12px; letter-spacing:0.14em; color:#8a8578; margin-top:7px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar pad">
+    <div class="wordmark">SEA<span class="dot">.</span></div>
+    <div class="right">SANIKA ELEVATION AGENCY&nbsp;&nbsp;·&nbsp;&nbsp;BERGEN COUNTY, NJ</div>
+  </div>
+  <div class="rule" style="margin-left:56px; margin-right:56px;"></div>
+
+  <div class="hero pad">
+    <div class="kicker">FOR HIGH-TICKET HOME BUSINESSES <span class="d">◆</span> ROOFING · SOLAR · HVAC · REMODELING</div>
+    <div class="headline">More booked jobs<br>than you can <span class="serif">handle.</span></div>
+    <div class="sub">We install the organic content that earns trust and the paid ads that book the call. Done end to end, by hand, for one high-ticket home business per market.</div>
+  </div>
+
+  <div class="receipts pad">
+    <div class="sectlabel">THE RECEIPTS&nbsp;&nbsp;·&nbsp;&nbsp;REAL CLIENT NUMBERS</div>
+    <div class="statrow">
+      <div class="stat">
+        <div class="num">10</div>
+        <div class="cap"><b>Appointments booked in week one</b> with Spartan Roofing, on $650 of ad spend.</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="o">$</span>15K</div>
+        <div class="cap"><b>What a single job is worth</b> in the niches we serve.</div>
+      </div>
+      <div class="stat">
+        <div class="num">60</div>
+        <div class="cap"><b>Leads in 30 days</b> on the paid system. Guaranteed.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker">ROOFING<span class="d">◆</span>SOLAR<span class="d">◆</span>HVAC<span class="d">◆</span>REMODELING<span class="d">◆</span>ONE OPERATOR PER MARKET<span class="d">◆</span>B2B ONLY</div>
+
+  <div class="engines pad">
+    <div class="sectlabel">TWO ENGINES&nbsp;&nbsp;·&nbsp;&nbsp;ONE OUTCOME</div>
+    <div class="engrow">
+      <div class="eng">
+        <div class="no">01</div>
+        <h3>The Organic Engine</h3>
+        <p>Short-form content that puts a real face on your brand and compounds trust while you sleep. Filmed, edited and posted for you.</p>
+        <div class="tag">TRUST, ON A FLYWHEEL</div>
+      </div>
+      <div class="eng">
+        <div class="no">02</div>
+        <h3>Paid Acquisition</h3>
+        <p>Meta ads that put your offer in front of ready buyers and book the call. Demand you can turn up the day you need more jobs.</p>
+        <div class="tag">LEADS, ON DEMAND</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <div class="pad">
+      <div class="stars">★★★★★</div>
+      <div class="q">“Before SEA we spent $3,000 on ads and got zero leads. In our first week with them, $650 in ad spend put 10 booked appointments on the calendar. They run it like operators, not an agency.”</div>
+      <div class="att">SPARTAN ROOFING&nbsp;&nbsp;·&nbsp;&nbsp;NEW JERSEY</div>
+    </div>
+  </div>
+
+  <div class="cta pad">
+    <div>
+      <div class="big">One market.<br>One operator.</div>
+      <div class="serif">When your market is taken, it is taken.</div>
+      <div class="foot">A CLOSER BUILT THIS. NOT AN AGENCY.</div>
+    </div>
+    <div class="ctaright">
+      <div class="btn">Book a call&nbsp;&nbsp;→</div>
+      <div class="site">SANIKAELEVATIONAGENCY.COM</div>
+      <div class="ig">@SANIKAELEVATION</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

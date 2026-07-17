@@ -212,7 +212,10 @@ Touch 1 (call/DM) → +48h: SMS/DM bump → +48h: Loom or value drop (their mark
 
 ## Part 9 — Website Audit: sanikaelevationagency.com (added July 17)
 
-*Note: the site blocks automated fetchers (403), so this audit is based on what Google's index captured of the live copy. Verify details against the actual page.*
+> **UPDATE (July 17, evening — after reviewing full site screenshots):** the live site is stronger than the search index suggested. Already solid: outcome-led hero ("More booked jobs than you can handle."), real proof (The Receipts: 10 appointments in week one for Spartan Roofing on $650 ad spend; "60 leads in 30 days. Guaranteed."), three client testimonials, founder photos, clear CTAs ("Book a call" / "I'm ready to get more leads"), exclusivity rule stated. Items #1 and #3 below are RESOLVED on the live site.
+> **Still worth updating:** (a) the "$5K/month" figure that surfaces in search snippets — move pricing behind the call or add the pay-per-appointment pilot as the public front door; (b) a dedicated **/roofing** landing page for sprint outreach (site currently spans roofing/solar/HVAC/remodeling and even a pet-care testimonial, which dilutes the "high-ticket home" niche); (c) instant SMS auto-reply on form fills — demonstrate the speed-to-lead you sell; (d) the aggressive bot-blocking note in #6.
+
+*Original audit below was based on what Google's index captured (site returns 403 to automated fetchers).*
 
 **What the site says today:**
 - Hero: "Organic content & paid ads for high ticket home businesses"
@@ -241,6 +244,52 @@ Touch 1 (call/DM) → +48h: SMS/DM bump → +48h: Loom or value drop (their mark
 
 ### Why this matters for the sprint
 The outbound sprint (Part 6) drives every prospect to this site. Fixing #1, #2, #4, #5 is **Day 1–2 work** and multiplies everything downstream. Outbound volume with a leaking funnel is how ads "don't get results."
+
+---
+
+## Part 10 — The Facebook Group Playbook (added July 17)
+
+**Assets:** `brochure/SEA_Offer_Card.png` (1080×1350 image — the one you send in DMs and promo threads; images open instantly in Messenger, PDFs mostly don't get opened) and `brochure/SEA_Offer_OnePager.pdf` (for email follow-ups and serious prospects). Both match the site brand and reuse its proven copy (hero, receipts, Spartan quote, one-per-market rule).
+
+### The #1 rule
+**Never post the brochure in a group's main feed, and never send it as a first message.** Groups ban promo instantly, and Messenger puts image-first messages from strangers into hidden requests. The brochure is a *close* asset: it gets sent after a conversation starts, or posted in designated promo threads. Value in public, offer in private.
+
+### Step 0 — Profile prep (30 min, do first)
+Everyone you DM will click your name before replying. On the personal profile doing the outreach (pages can't join most groups): cover photo = "More booked jobs than you can handle." + site URL; bio line = "We book jobs for one high-ticket home business per market · Bergen County NJ"; pinned/featured post = the Spartan Roofing receipt (10 appointments, $650, week one).
+
+### Step 1 — Join (today; approvals take 1–2 days)
+- **National roofing:** The Roofing Support Group · Roofing Insights Private Group (owners-only) · Roofers Helping Roofers · The Roofing & Solar Community · The Roofing Masters Network · Roofing–Roofers, Contractors and Subcontractors
+- **Local:** NJ contractor/home-improvement groups, Bergen County business groups, plus solar/HVAC/remodeling equivalents
+- Answer join questions honestly ("we're a marketing partner to home-improvement companies"). Owner-only groups that reject vendors: skip, don't lie.
+
+### Step 2 — Rules recon (15 min per group)
+Read the pinned rules. Note which groups run **promo/classified threads** (often Monday or Friday) — that's the only place the card image gets posted. Note which allow value posts.
+
+### Step 3 — Daily rhythm (45–60 min/day, fits inside the sprint's daily block)
+1. Comment usefully on **10 posts** — actually answer marketing/lead questions, no pitching, no links
+2. Watch for trigger posts: "slow month," "leads are garbage," "Angi/HomeAdvisor is a scam," "anyone know a good marketer?" → helpful comment first, then DM
+3. Send **20 opener DMs** (10 morning, 10 evening — spacing avoids Messenger spam limits)
+4. Send the **card to 3–5 warm replies** (only after they say yes)
+5. Answer every reply **within 5 minutes** — you are the live demo of speed-to-lead
+
+### Step 4 — The DM flow
+1. **Opener (no pitch, no link, no image):** "Hey [Name] — saw your comment in [group] about [thing]. Are you taking on more [roofing] jobs in [their area] right now, or booked solid?"
+2. **Conversation (2–3 messages):** ask about their lead flow; mirror their words
+3. **Permission:** "We put 10 appointments on a NJ roofer's calendar in week one on $650 of ad spend — want me to send over the one-pager and a 3-min video on how that maps to [Company]?"
+4. **Send:** SEA_Offer_Card.png + booking link (+ optional Loom)
+5. **Follow-up:** +48h bump ("any thoughts?"), day 5–6 close-the-loop. Most bookings come from touches 2–4.
+
+### Step 5 — Promo threads (where allowed)
+Post the card image with 3 lines: receipt hook ("$650 in → 10 booked appointments in week one — real NJ roofer"), the rule ("one operator per market — if your area's open, it's yours"), CTA ("comment MARKET or DM me and I'll check if your area is free"). Reply to every comment; that's where DMs start.
+
+### Step 6 — Weekly value post (1 per group, where allowed)
+Native text post teaching one thing, e.g. "We put 10 appointments on a roofer's calendar with $650 in ad spend. The 3 things that actually mattered:" → 3 short lessons → "DM me if you want the full breakdown." This is the organic-engine demo, applied to yourself.
+
+### Tracking (add columns to the sprint sheet)
+group · prospect · opener sent · replied · card sent · call booked. Daily targets: 10 comments, 20 DMs, 3–5 card sends → **0.5–1 booked call/day**, compounding after day 3–4 as group presence builds.
+
+### Don'ts
+No links/images in first messages · no main-feed promo · no arguing with other marketers in groups (many members are competitors — let the receipts talk) · no mass friend-requests · no more than ~20 cold DMs/day per profile.
 
 ---
 
