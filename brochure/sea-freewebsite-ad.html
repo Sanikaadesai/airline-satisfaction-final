@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:'Outfit'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/Outfit-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'Outfit'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/Outfit-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'WorkSans'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'WorkSans'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/WorkSans-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'SerifIt'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf'); }
+  @font-face { font-family:'Lora'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/Lora-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'GeistMono'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/GeistMono-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'GeistMono'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/GeistMono-Bold.ttf'); font-weight:700; }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  html,body { width:1080px; }
+  body { font-family:'WorkSans'; color:#EDE8DF; background:#0F0E0B; }
+
+  .page { width:1080px; height:1350px; background:#0F0E0B; position:relative; overflow:hidden; }
+  .glow-top { position:absolute; top:-260px; left:50%; transform:translateX(-50%); width:900px; height:560px;
+    background:radial-gradient(ellipse at center, rgba(127,179,227,0.10) 0%, rgba(127,179,227,0.0) 62%); }
+  .content { position:relative; padding:0 72px; }
+
+  .topbar { display:flex; align-items:center; justify-content:space-between; padding-top:44px; }
+  .brand { display:flex; align-items:center; gap:14px; }
+  .brand .ring { width:38px; height:38px; border:1.2px solid #6E6960; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-family:'SerifIt'; font-size:15px; color:#EDE8DF; }
+  .brand .name { font-family:'Lora'; font-weight:700; font-size:21px; letter-spacing:0.16em; }
+  .topbar .url { font-family:'GeistMono'; font-size:12px; letter-spacing:0.14em; color:#9C968A; }
+
+  .kicker { text-align:center; font-family:'GeistMono'; font-size:12.5px; letter-spacing:0.26em; color:#D9A23B; margin-top:58px; }
+
+  .headline { text-align:center; font-family:'Outfit'; font-weight:700; font-size:68px; line-height:1.04; letter-spacing:0.005em; margin-top:20px; }
+  .headline .blue { color:#7FB3E3; }
+
+  .sub { text-align:center; font-size:18px; line-height:1.6; color:#B8B2A6; max-width:800px; margin:26px auto 0; }
+  .sub b { color:#EDE8DF; font-weight:700; }
+
+  /* notification stack */
+  .stack { margin-top:52px; }
+  .notif { background:#161511; border:1px solid #2B2820; border-radius:14px; padding:19px 24px;
+    display:flex; align-items:flex-start; gap:16px; width:860px; }
+  .notif + .notif { margin-top:14px; }
+  .n1 { margin-left:0; }
+  .n2 { margin-left:38px; border-color:#31435a; box-shadow:0 0 34px rgba(127,179,227,0.10); }
+  .n3 { margin-left:76px; }
+  .dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; margin-top:4px; }
+  .red { background:#E06A5A; box-shadow:0 0 10px rgba(224,106,90,0.8); }
+  .blu { background:#7FB3E3; box-shadow:0 0 10px rgba(127,179,227,0.8); }
+  .grn { background:#7FC98B; box-shadow:0 0 10px rgba(127,201,139,0.8); }
+  .notif .body { flex:1; }
+  .notif .tag { font-family:'GeistMono'; font-size:11px; letter-spacing:0.16em; color:#9C968A; display:flex; align-items:center; gap:12px; }
+  .notif .tag b { color:#EDE8DF; font-weight:700; }
+  .notif .msg { font-size:15.5px; line-height:1.45; color:#D9D3C7; margin-top:6px; }
+  .notif .msg i { font-family:'SerifIt'; font-style:normal; color:#7FB3E3; font-size:1.06em; }
+  .notif .side { margin-left:auto; font-family:'GeistMono'; font-size:11px; letter-spacing:0.1em; color:#6E6960; flex-shrink:0; text-align:right; padding-top:3px; max-width:150px; line-height:1.5; }
+  .notif .side.gold { color:#D9A23B; }
+  .wave { display:flex; align-items:center; gap:2.5px; height:18px; flex-shrink:0; }
+  .wave span { width:3px; background:#7FB3E3; border-radius:2px; opacity:0.9; }
+
+  .stackcap { font-family:'GeistMono'; font-size:12px; letter-spacing:0.22em; color:#9C968A; margin-top:26px; text-align:center; }
+  .stackcap b { color:#EDE8DF; font-weight:700; }
+
+  /* tiles */
+  .tiles { display:flex; gap:18px; margin-top:50px; }
+  .tile { flex:1; background:#14130F; border:1px solid #2B2820; border-radius:14px; padding:26px 18px 22px; text-align:center; }
+  .tile .num { font-family:'SerifIt'; font-size:46px; color:#7FB3E3; line-height:1; }
+  .tile .lab { font-family:'GeistMono'; font-size:10.5px; letter-spacing:0.12em; color:#9C968A; margin-top:14px; line-height:1.65; }
+
+  .goldline { text-align:center; font-family:'GeistMono'; font-weight:700; font-size:12.5px; letter-spacing:0.2em; color:#D9A23B; margin-top:46px; }
+  .promise { text-align:center; font-family:'SerifIt'; font-size:26px; color:#EDE8DF; margin-top:18px; }
+  .promise .blue { color:#7FB3E3; }
+
+  /* cta */
+  .cta { position:absolute; bottom:0; left:0; right:0; padding:0 72px 46px; text-align:center; }
+  .btn { display:inline-block; background:#8FC1EC; color:#10131A; font-family:'Outfit'; font-weight:700; font-size:22px;
+    padding:19px 46px; border-radius:999px; box-shadow:0 0 48px rgba(127,179,227,0.35); }
+  .cta .under { font-family:'GeistMono'; font-size:11.5px; letter-spacing:0.18em; color:#9C968A; margin-top:16px; }
+  .cta .url { font-family:'GeistMono'; font-weight:700; font-size:13.5px; letter-spacing:0.2em; color:#EDE8DF; margin-top:8px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="glow-top"></div>
+  <div class="content">
+
+    <div class="topbar">
+      <div class="brand"><div class="ring">S</div><div class="name">SEA</div></div>
+      <div class="url">FREE.SANIKAELEVATIONAGENCY.COM</div>
+    </div>
+
+    <div class="kicker">FOR ROOFERS&nbsp;&nbsp;◆&nbsp;&nbsp;STORM SEASON 2026&nbsp;&nbsp;◆&nbsp;&nbsp;BUILT WHILE YOU'RE ON THE ROOF</div>
+
+    <div class="headline">5 stars on Google.<br><span class="blue">Zero website</span> to show for it.</div>
+
+    <div class="sub">You're 30 feet up all day. Homeowners are searching tonight. We build your website <b>free</b>, put an <b>AI receptionist</b> on every call 24/7, and have it all <b>live in 24 hours</b>.</div>
+
+    <div class="stack">
+      <div class="notif n1">
+        <div class="dot red"></div>
+        <div class="body">
+          <div class="tag"><b>MISSED CALL</b>&nbsp;·&nbsp;2:14 PM</div>
+          <div class="msg">Homeowner on Maple St — needs a roof inspection after the storm.</div>
+        </div>
+        <div class="side">YOU WERE<br>ON A ROOF</div>
+      </div>
+      <div class="notif n2">
+        <div class="dot blu"></div>
+        <div class="body">
+          <div class="tag"><b>YOUR AI RECEPTIONIST</b>&nbsp;·&nbsp;2:14 PM <span class="wave"><span style="height:6px"></span><span style="height:12px"></span><span style="height:17px"></span><span style="height:9px"></span><span style="height:14px"></span><span style="height:5px"></span></span></div>
+          <div class="msg">Answered on the second ring. <i>"He's on a job right now — I can get you on his calendar tomorrow at 9:00."</i></div>
+        </div>
+      </div>
+      <div class="notif n3">
+        <div class="dot grn"></div>
+        <div class="body">
+          <div class="tag"><b>BOOKED</b>&nbsp;·&nbsp;TUE 9:00 AM</div>
+          <div class="msg">Roof inspection · Maple St — on your calendar, homeowner confirmed by text.</div>
+        </div>
+        <div class="side gold">A $15,000<br>JOB, KEPT</div>
+      </div>
+      <div class="stackcap">THE CALL YOU MISS AT 2:14 — <b>BOOKED BY 2:15.</b></div>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><div class="num">$0</div><div class="lab">TO BUILD YOUR SITE<br>FROM YOUR REAL REVIEWS &amp; PHOTOS</div></div>
+      <div class="tile"><div class="num">24h</div><div class="lab">DEMO FIRST, THEN LIVE<br>SAME DAY. NOBODY MOVES FASTER</div></div>
+      <div class="tile"><div class="num">$250</div><div class="lab">PER MONTH · ALL HANDLED<br>HOSTING · EDITS · AI&nbsp;RECEPTIONIST</div></div>
+    </div>
+
+    <div class="goldline">ONE ROOFER PER TOWN&nbsp;&nbsp;◆&nbsp;&nbsp;WE NEVER BUILD YOUR COMPETITOR</div>
+    <div class="promise">A booked job in your first 90 days — <span class="blue">or we work free until it happens.</span></div>
+
+  </div>
+
+  <div class="cta">
+    <div class="btn">Claim my free website&nbsp;&nbsp;→</div>
+    <div class="under">60 SECONDS · SEE YOUR DEMO BEFORE YOU PAY A DOLLAR · NOT FOR YOU? WE DELETE IT. $0 EITHER WAY</div>
+    <div class="url">FREE.SANIKAELEVATIONAGENCY.COM</div>
+  </div>
+</div>
+</body>
+</html>

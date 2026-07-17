@@ -82,6 +82,8 @@ Use these numbers in every pitch. Roofers respect people who know their economic
 
 ## Part 3 — The Offer (what you sell)
 
+> **UPDATE (July 17, evening):** SEA now runs a dedicated lead-magnet funnel at **free.sanikaelevationagency.com** — free custom website (built from the roofer's real reviews/photos), AI receptionist answering 24/7, live in 24 hours, $250/mo holding fee, "booked job in 90 days or we work free," one contractor per town. **This is the front-door offer for all outreach** — lower friction than the pilot below; the paid-ads engine (below and Part 4) becomes the upsell once the site + receptionist prove value. Campaign assets: `brochure/SEA_FreeWebsite_Ad.png` (DM/feed image) and `brochure/SEA_FreeWebsite_OnePager.pdf`. ⚠️ Note: the live funnel page shows "founding rate $450 for the first ten, then $495" while the brochure uses $250/mo per the founder's instruction — reconcile before spending on traffic; the ad, the page and the pitch must all say the same number.
+
 Roofers have been burned by $2,000–$5,000/mo retainers with no results. The research is clear: they want **incentive alignment** and **capacity-paced leads**. So sell a pilot they can't compare to a retainer:
 
 ### The Storm-Season Pilot (recommended)
@@ -250,6 +252,8 @@ The outbound sprint (Part 6) drives every prospect to this site. Fixing #1, #2, 
 ## Part 10 — The Facebook Group Playbook (added July 17)
 
 **Assets:** `brochure/SEA_Offer_Card.png` (1080×1350 image — the one you send in DMs and promo threads; images open instantly in Messenger, PDFs mostly don't get opened) and `brochure/SEA_Offer_OnePager.pdf` (for email follow-ups and serious prospects). Both match the site brand and reuse its proven copy (hero, receipts, Spartan quote, one-per-market rule).
+
+> **UPDATE (July 17, evening):** for the free-website lead magnet (see Part 3 update), use `brochure/SEA_FreeWebsite_Ad.png` as the primary DM/promo-thread image and `brochure/SEA_FreeWebsite_OnePager.pdf` as the follow-up brochure — lower-friction offer, same playbook below. Lead with the free-website card; keep the paid-ads card for prospects who already have a site and want appointments.
 
 ### The #1 rule
 **Never post the brochure in a group's main feed, and never send it as a first message.** Groups ban promo instantly, and Messenger puts image-first messages from strangers into hidden requests. The brochure is a *close* asset: it gets sent after a conversation starts, or posted in designated promo threads. Value in public, offer in private.
