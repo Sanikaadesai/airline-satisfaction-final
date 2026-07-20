@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:'Outfit'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/Outfit-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'Outfit'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/Outfit-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'WorkSans'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'GeistMono'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/GeistMono-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'GeistMono'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/GeistMono-Bold.ttf'); font-weight:700; }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  body { font-family:'WorkSans'; color:#EAF0FA; background:#070A14; }
+  .page { width:1080px; height:1350px; background:#070A14; position:relative; overflow:hidden; text-align:center; }
+
+  /* aurora background */
+  .aur1 { position:absolute; top:-220px; left:-180px; width:820px; height:700px;
+    background:radial-gradient(ellipse at center, rgba(139,124,247,0.20) 0%, rgba(139,124,247,0) 60%); }
+  .aur2 { position:absolute; bottom:-160px; right:-200px; width:900px; height:760px;
+    background:radial-gradient(ellipse at center, rgba(111,227,208,0.14) 0%, rgba(111,227,208,0) 60%); }
+  .aur3 { position:absolute; top:340px; left:50%; transform:translateX(-50%); width:900px; height:500px;
+    background:radial-gradient(ellipse at center, rgba(255,93,93,0.10) 0%, rgba(255,93,93,0) 62%); }
+  .grid { position:absolute; inset:0; opacity:0.5;
+    background-image:linear-gradient(rgba(234,240,250,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(234,240,250,0.035) 1px, transparent 1px);
+    background-size:60px 60px; }
+
+  .hud { position:relative; display:flex; justify-content:space-between; align-items:center; padding:30px 56px 0; }
+  .hud .l, .hud .r { font-family:'GeistMono'; font-size:11.5px; letter-spacing:0.24em; color:#8b93a7; }
+  .hud .l b { color:#EAF0FA; font-weight:700; }
+  .hudline { position:relative; margin:18px 56px 0; border-top:1px solid rgba(234,240,250,0.10); }
+
+  .alert { position:relative; display:inline-flex; align-items:center; gap:10px; margin-top:40px;
+    border:1px solid rgba(255,93,93,0.45); background:rgba(255,93,93,0.08); border-radius:999px; padding:10px 22px;
+    font-family:'GeistMono'; font-weight:700; font-size:12px; letter-spacing:0.24em; color:#FF8A8A;
+    box-shadow:0 0 30px rgba(255,93,93,0.15); }
+  .alert svg { flex-shrink:0; }
+
+  .hook { position:relative; font-family:'Outfit'; font-weight:700; font-size:52px; line-height:1.12; margin-top:26px; }
+  .hook .grad { background:linear-gradient(90deg,#FF8A8A 0%,#FF5D5D 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  /* loss card */
+  .loss { position:relative; margin:34px auto 0; width:880px; border-radius:20px;
+    border:1px solid rgba(255,93,93,0.30); background:rgba(255,255,255,0.03);
+    box-shadow:0 0 60px rgba(255,93,93,0.12), inset 0 0 40px rgba(255,93,93,0.04); padding:30px 40px 28px; }
+  .loss .lab { font-family:'GeistMono'; font-size:11px; letter-spacing:0.26em; color:#8b93a7; }
+  .loss .row { display:flex; align-items:center; justify-content:center; gap:34px; margin-top:14px; }
+  .loss .big { font-family:'Outfit'; font-weight:700; font-size:104px; line-height:1; color:#FF5D5D; text-shadow:0 0 50px rgba(255,93,93,0.35); }
+  .loss .big span { font-size:0.38em; color:#8b93a7; font-family:'GeistMono'; font-weight:400; letter-spacing:0.14em; display:block; margin-top:8px; }
+  .loss .math { font-family:'GeistMono'; font-size:13.5px; letter-spacing:0.08em; color:#B9C1D4; margin-top:20px; line-height:1.8; }
+  .loss .math b { color:#FFB08A; font-weight:700; }
+
+  /* fix */
+  .fixlabel { position:relative; display:flex; align-items:center; justify-content:center; gap:16px; margin-top:40px; }
+  .fixlabel .rule { width:80px; border-top:1px solid rgba(234,240,250,0.12); }
+  .fixlabel .t { font-family:'GeistMono'; font-weight:700; font-size:13px; letter-spacing:0.28em;
+    background:linear-gradient(90deg,#6FE3D0,#8B7CF7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .chips { position:relative; display:flex; justify-content:center; gap:12px; margin-top:24px; }
+  .chip { border:1px solid rgba(234,240,250,0.14); background:rgba(255,255,255,0.04); border-radius:999px; padding:15px 24px;
+    font-family:'Outfit'; font-weight:700; font-size:19px; color:#EAF0FA; }
+  .chip .mint { color:#6FE3D0; } .chip .lav { color:#B4A6F9; } .chip .peach { color:#FFB08A; }
+  .promise { position:relative; font-family:'WorkSans'; font-size:17.5px; color:#B9C1D4; margin-top:24px; }
+  .promise b { color:#EAF0FA; }
+
+  /* CTA */
+  .cta { position:absolute; left:56px; right:56px; bottom:100px; border-radius:24px; padding:40px 40px 36px;
+    background:linear-gradient(135deg, rgba(111,227,208,0.10), rgba(139,124,247,0.12));
+    border:1.5px solid rgba(139,124,247,0.45);
+    box-shadow:0 0 80px rgba(139,124,247,0.22), inset 0 0 60px rgba(111,227,208,0.05); }
+  .cta .say { font-family:'GeistMono'; font-weight:700; font-size:13px; letter-spacing:0.26em; color:#8b93a7; }
+  .cta .word { font-family:'Outfit'; font-weight:700; font-size:96px; line-height:1; margin-top:12px;
+    background:linear-gradient(90deg,#6FE3D0 0%,#8B7CF7 55%,#B4A6F9 100%); -webkit-background-clip:text; background-clip:text; color:transparent;
+    letter-spacing:0.04em; }
+  .cta .how { font-family:'Outfit'; font-weight:700; font-size:21px; color:#EAF0FA; margin-top:16px; }
+  .cta .how span { color:#8b93a7; font-family:'WorkSans'; font-weight:400; }
+  .cta .scar { font-family:'GeistMono'; font-weight:700; font-size:12px; letter-spacing:0.22em; color:#FFB08A; margin-top:16px; }
+
+  .foot { position:absolute; bottom:0; left:0; right:0; padding:32px 0;
+    font-family:'GeistMono'; font-size:11px; letter-spacing:0.2em; color:#5d6478; }
+  .foot b { color:#8b93a7; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="aur1"></div><div class="aur2"></div><div class="aur3"></div><div class="grid"></div>
+
+  <div class="hud"><div class="l"><b>SEA</b>&nbsp;&nbsp;//&nbsp;&nbsp;ROOFING GROWTH SYSTEMS</div><div class="r">STORM SEASON 2026</div></div>
+  <div class="hudline"></div>
+
+  <div class="alert">
+    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"><path d="M7 1 L13 12 L1 12 Z" stroke="#FF8A8A" stroke-width="1.4" stroke-linejoin="round"/><rect x="6.4" y="5" width="1.2" height="3.4" rx="0.6" fill="#FF8A8A"/><rect x="6.4" y="9.4" width="1.2" height="1.2" rx="0.6" fill="#FF8A8A"/></svg>
+    REVENUE LEAK DETECTED
+  </div>
+
+  <div class="hook">You're up on the roof.<br><span class="grad">Your competitor is answering your calls.</span></div>
+
+  <div class="loss">
+    <div class="lab">WHAT THAT COSTS YOU</div>
+    <div class="row">
+      <div class="big">&ndash;$15,000<span>PER MISSED CALL</span></div>
+    </div>
+    <div class="math">MISS JUST ONE CALL A WEEK AND THAT'S <b>&ndash;$780,000 A YEAR</b> IN ROOFS YOU NEVER GOT TO QUOTE.<br>THAT'S NOT A MARKETING PROBLEM. <b>THAT'S HOW ROOFING COMPANIES DIE.</b></div>
+  </div>
+
+  <div class="fixlabel"><div class="rule"></div><div class="t">THE FIX — INSTALLED FREE, LIVE IN 24 HOURS</div><div class="rule"></div></div>
+
+  <div class="chips">
+    <div class="chip"><span class="mint">FREE</span> website</div>
+    <div class="chip">AI answers <span class="lav">24/7</span></div>
+    <div class="chip">Live in <span class="mint">24 hrs</span></div>
+    <div class="chip"><span class="peach">$250</span>/mo all-in</div>
+  </div>
+  <div class="promise">A booked job in your first 90 days — <b>or we work free.</b> See your demo before you pay a dollar.</div>
+
+  <div class="cta">
+    <div class="say">INTERESTED? SEND ME ONE WORD:</div>
+    <div class="word">"TOWN"</div>
+    <div class="how">Reply, comment, or DM it — <span>wherever you're seeing this.</span>&nbsp; I'll tell you if your town is still open.</div>
+    <div class="scar">1 ROOFER PER TOWN&nbsp;&nbsp;·&nbsp;&nbsp;ONCE IT'S CLAIMED, IT'S GONE</div>
+  </div>
+
+  <div class="foot"><b>SEA</b>&nbsp;&nbsp;·&nbsp;&nbsp;FREE.SANIKAELEVATIONAGENCY.COM</div>
+</div>
+</body>
+</html>

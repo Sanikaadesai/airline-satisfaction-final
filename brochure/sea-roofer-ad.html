@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:'Outfit'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/Outfit-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'WorkSans'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'SerifIt'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf'); }
+  @font-face { font-family:'GeistMono'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/GeistMono-Regular.ttf'); font-weight:400; }
+  @font-face { font-family:'GeistMono'; src:url('file:///root/.claude/skills/canvas-design/canvas-fonts/GeistMono-Bold.ttf'); font-weight:700; }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  body { font-family:'WorkSans'; color:#EDE8DF; background:#0C0B09; }
+  .page { width:1080px; height:1350px; background:#0C0B09; position:relative; overflow:hidden; text-align:center; }
+  .glow { position:absolute; top:40px; left:50%; transform:translateX(-50%); width:980px; height:640px;
+    background:radial-gradient(ellipse at center, rgba(255,107,85,0.13) 0%, rgba(255,107,85,0) 60%); }
+
+  .ribbon { position:absolute; top:0; left:0; right:0; background:#D9A23B; color:#141109; font-family:'GeistMono'; font-weight:700;
+    font-size:13px; letter-spacing:0.24em; padding:12px 0; white-space:nowrap; overflow:hidden; }
+
+  .hook { font-family:'Outfit'; font-weight:700; font-size:45px; line-height:1.15; margin-top:122px; position:relative; }
+  .hook .dim { color:#9C968A; }
+
+  .mega { font-family:'SerifIt'; font-size:232px; line-height:1; color:#FF6B55; margin-top:30px; position:relative;
+    text-shadow:0 0 90px rgba(255,107,85,0.45); }
+  .megasub { font-family:'SerifIt'; font-size:37px; color:#EDE8DF; margin-top:26px; position:relative; }
+  .megasub .dim { color:#9C968A; }
+
+  .fixlabel { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:78px; position:relative; }
+  .fixlabel .rule { width:90px; border-top:1px solid #2B2820; }
+  .fixlabel .t { font-family:'GeistMono'; font-weight:700; font-size:14px; letter-spacing:0.28em; color:#7FB3E3; }
+
+  .chips { display:flex; justify-content:center; gap:14px; margin-top:34px; position:relative; }
+  .chip { border:1.5px solid #2f3d4d; background:rgba(127,179,227,0.06); border-radius:999px; padding:15px 25px;
+    font-family:'Outfit'; font-weight:700; font-size:19.5px; color:#EDE8DF; }
+  .chip b { color:#7FB3E3; }
+
+  .promise { font-family:'SerifIt'; font-size:28px; color:#B8B2A6; margin-top:44px; position:relative; }
+  .promise b { color:#EDE8DF; font-weight:400; }
+
+  /* CTA gold panel */
+  .cta { position:absolute; left:0; right:0; bottom:100px; background:#D9A23B; padding:48px 60px 44px;
+    box-shadow:0 0 80px rgba(217,162,59,0.30); }
+  .cta .say { font-family:'GeistMono'; font-weight:700; font-size:14px; letter-spacing:0.26em; color:#5c4413; }
+  .cta .big { font-family:'Outfit'; font-weight:700; font-size:66px; color:#141109; margin-top:10px; line-height:1.05; }
+  .cta .sub { font-family:'GeistMono'; font-weight:700; font-size:14.5px; letter-spacing:0.12em; color:#3c2f0e; margin-top:16px; }
+  .cta .scar { font-family:'GeistMono'; font-size:12.5px; letter-spacing:0.2em; color:#5c4413; margin-top:12px; }
+
+  .foot { position:absolute; bottom:0; left:0; right:0; padding:34px 0;
+    font-family:'GeistMono'; font-size:11.5px; letter-spacing:0.2em; color:#6E6960; }
+  .foot b { color:#9C968A; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="glow"></div>
+  <div class="ribbon">◆&nbsp;&nbsp;ROOFERS ONLY&nbsp;&nbsp;◆&nbsp;&nbsp;STORM SEASON 2026&nbsp;&nbsp;◆&nbsp;&nbsp;ROOFERS ONLY&nbsp;&nbsp;◆&nbsp;&nbsp;STORM SEASON 2026&nbsp;&nbsp;◆</div>
+
+  <div class="hook">Missed a call while you<br>were on a roof this week?</div>
+
+  <div class="mega">&ndash;$15,000</div>
+  <div class="megasub">That's one roof — <span class="dim">gone to whoever answered first.</span></div>
+
+  <div class="fixlabel"><div class="rule"></div><div class="t">THE FIX — AND IT'S FREE</div><div class="rule"></div></div>
+
+  <div class="chips">
+    <div class="chip"><b>FREE</b> website</div>
+    <div class="chip">AI answers <b>24/7</b></div>
+    <div class="chip">Live in <b>24 hrs</b></div>
+    <div class="chip"><b>$250</b>/mo all-in</div>
+  </div>
+
+  <div class="promise">A booked job in your first 90 days — <b>or we work free.</b></div>
+
+  <div class="cta">
+    <div class="say">WANT IT? DON'T THINK. JUST TYPE.</div>
+    <div class="big">Comment &ldquo;TOWN&rdquo; below</div>
+    <div class="sub">OR DM ME THE WORD &ldquo;TOWN&rdquo; — I'LL TELL YOU IF YOUR TOWN IS STILL OPEN</div>
+    <div class="scar">1 ROOFER PER TOWN&nbsp;&nbsp;·&nbsp;&nbsp;ONCE IT'S CLAIMED, IT'S GONE</div>
+  </div>
+
+  <div class="foot"><b>SEA</b>&nbsp;&nbsp;·&nbsp;&nbsp;FREE.SANIKAELEVATIONAGENCY.COM</div>
+</div>
+</body>
+</html>
